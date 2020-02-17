@@ -33,11 +33,13 @@ def edit_lines(dest):
     lines = f.readlines()
     print(lines)
 
-    for line in lines:
+    for i, line in enumerate(lines):
         if(line == 'wecome to Python Scripting\n'):
-            line = 'welcome to Python Scripting\n'
+            lines[i] = 'welcome to Python Scripting\n'
     f.close()
     f = open(dest, 'w')
+    print(lines)
+    print(f)
     f.writelines(lines)
     f.close()
 
