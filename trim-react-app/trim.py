@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+
 import os
 import sys
 import time
@@ -6,21 +6,41 @@ import smtplib
 from os import path
 import dotenv
 
-nargs = len(sys.argv)
+# nargs = len(sys.argv)
 
 
 def createFile(dest):
     if not (path.isfile(dest)):
         f = open(dest, 'w')
-        f.write("wecome to Python Scripting")
+        f.write("wecome to Python Scripting\n")
         f.close()
 
 
 dest = 'C:\\Users\\jakob\\projects\\python-scripts\\trim-react-app\\sample.txt'
 
 
-def edit_file(filename):
-    pass
+def edit_file(dest):
+    f = open(dest, 'a')
+    # add a line
+    f.write('heres an aditional line\n')
+    f.close()
+
+
+def edit_lines(dest):
+    f = open(dest, 'r')
+    # f.seek()
+
+    lines = f.readlines()
+    print(lines)
+
+    for line in lines:
+        if(line == 'wecome to Python Scripting\n'):
+            line = 'welcome to Python Scripting\n'
+    f.close()
+    f = open(dest, 'w')
+    f.writelines(lines)
+    f.close()
+
 # if not 3 <= nargs <= 5:
 #     print("usage: %s search_text replace_text [infile [outfile]]" %
 #           os.path.basename(sys.argv[0]))
@@ -41,6 +61,8 @@ def edit_file(filename):
 
 createFile(dest)
 print("File Created")
+edit_file(dest)
+edit_lines(dest)
 
 ######################################
 
