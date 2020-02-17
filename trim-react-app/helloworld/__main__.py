@@ -1,14 +1,32 @@
 import sys
+import logging
+from os import path
+import os
 # from .classmodule import MyClass
 # from .funcmodule import my_function
 
 
 def main():
-    print('in main')
-    args = sys.argv[1:]
-    print('count of args :: {}'.format(len(args)))
-    for arg in args:
-        print('passed argument :: {}'.format(arg))
+    if(len(sys.argv) != 2):
+        logging.warning('takes one argument: "trim"')
+        print(sys.argv[1])
+        return None
+
+    print('Trimming your Create React app project!...')
+    args = sys.argv[1]
+    # inCorrectDirectory = sys.argv[0] + 'App.js'
+    print(os.getcwd() + '\App.js')
+    print(path.isfile(os.getcwd() + '\App.js'))
+
+    if(path.islink(sys.argv[0] + '\App.js')):
+        length = len(args)
+
+        print(f'count of args :: {length}')
+        for arg in args:
+            print(f'passed argument :: {arg}')
+    else:
+        print('incorrect directory')
+
 
     # my_function('hello world')
     # my_object = MyClass('Thomas')
