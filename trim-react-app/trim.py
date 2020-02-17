@@ -1,29 +1,49 @@
+#!/usr/bin/env python
 import os
+import sys
 import time
 import smtplib
 from os import path
 import dotenv
 
-# def current_directory():
-#     cwd = os.getcwd()
-#     print(cwd)
+nargs = len(sys.argv)
 
 
-# def file_path(filename):
-#     path = os.path.abspath((filename))
-#     print(path)
+def createFile(dest):
+    if not (path.isfile(dest)):
+        f = open(dest, 'w')
+        f.write("wecome to Python Scripting")
+        f.close()
 
 
-# current_directory()
-# filename = 'sample.txt'
-# file_path(filename)
-####################################
-# epc = time.time()
-# localtime = time.localtime(epc)
-# print(localtime.tm_year)
+dest = 'C:\\Users\\jakob\\projects\\python-scripts\\trim-react-app\\sample.txt'
 
-# print(time.ctime(epc))
-####################################
+
+def edit_file(filename):
+    pass
+# if not 3 <= nargs <= 5:
+#     print("usage: %s search_text replace_text [infile [outfile]]" %
+#           os.path.basename(sys.argv[0]))
+# else:
+#     stext = sys.argv[1]
+#     rtext = sys.argv[2]
+#     input = sys.stdin
+#     output = sys.stdout
+#     if nargs > 3:
+#         input = open(sys.argv[3])
+#     if nargs > 4:
+#         output = open(sys.argv[4], 'w')
+#     for s in input.xreadlines(  ):
+#         output.write(s.replace(stext, rtext))
+#     output.close(  )
+#     input.close(  )
+
+
+createFile(dest)
+print("File Created")
+
+######################################
+
 # this works, but I had to go into google account settings and disable decure access
 # smtObj = smtplib.SMTP('smtp.gmail.com', 587)
 # smtObj.ehlo()
@@ -35,15 +55,3 @@ import dotenv
 # print("email Sent")
 
 #####################################
-# def createFile(dest):
-#     if not (path.isfile(dest)):
-#         f = open(dest, 'w')
-#         f.write("wecome to Python Scripting")
-#         f.close()
-
-
-# dest = 'C:\\Users\\jakob\\projects\\python-scripts\\trim-react-app\\sample.txt'
-
-# createFile(dest)
-
-# print("File Created")
