@@ -8,7 +8,7 @@
 
 ### Current CLI Projects:
 
-### 1. [Trimmer](https://github.com/jIrwinCline/Python-Scripts/tree/master/trim-react-app/trimmer)
+### 1. [Trimmer](https://github.com/jIrwinCline/Python-Scripts/tree/master/trim-react-app)
 
     * CLI tool that trims down hefty boilerplate projects such as create-react-app
     * Speeding up the development process so you don't have to manually delete unused files on small or large apps!
