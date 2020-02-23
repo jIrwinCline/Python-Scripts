@@ -1,6 +1,7 @@
 # Trimmer-CLI
 
 ### A tool for a simple trim on a just created React project using create-react-app.
+#### Trimmer will remove all the unecessary files and bloated code that appears after using create-react-app. Then leaves you with an extremely trimmed down version that is ready to develop.
 
 ## Usage
 
